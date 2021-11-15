@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -vx
 
 . common_demo_functions.sh
 

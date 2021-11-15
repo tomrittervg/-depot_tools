@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -vx
 . demo_repo.sh
 
 # Add and tag a dummy commit to refer to later.

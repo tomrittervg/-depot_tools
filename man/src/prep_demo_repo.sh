@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -vx
 
 NO_AUTOPREP=True
 . common_demo_functions.sh

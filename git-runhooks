@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -vx
 
 while test "$PWD" != "/"; do
   if test -f "$PWD/src/.gitmodules"; then

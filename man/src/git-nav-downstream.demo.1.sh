@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -vx
 . demo_repo.sh
 
 silent git checkout origin/main

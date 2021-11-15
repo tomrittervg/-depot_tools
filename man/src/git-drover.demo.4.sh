@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -vx
 . git-drover.demo.common.sh
 
 drover_c "This change needs to go to branch 9999"

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -vx
 export EDITOR=${EDITOR:=notepad}
 WIN_BASE=`dirname $0`
 UNIX_BASE=`cygpath "$WIN_BASE"`
