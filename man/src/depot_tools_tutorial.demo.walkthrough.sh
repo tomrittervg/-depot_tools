@@ -1,4 +1,5 @@
-#!/usr/bin/env bash -vx
+#!/usr/bin/env bash
+set -vx
 BLANK_DEMO=1
 . demo_repo.sh
 

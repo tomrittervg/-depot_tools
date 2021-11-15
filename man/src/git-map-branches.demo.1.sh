@@ -1,4 +1,5 @@
-#!/usr/bin/env bash -vx
+#!/usr/bin/env bash
+set -vx
 . demo_repo.sh
 
 silent git branch no_upstream HEAD~

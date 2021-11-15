@@ -1,4 +1,5 @@
-#!/usr/bin/env bash -vx
+#!/usr/bin/env bash
+set -vx
 . git-drover.demo.common.sh
 
 echo "# Make sure we have the most up-to-date branch sources."
