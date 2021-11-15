@@ -341,10 +341,16 @@ def main(argv):
   # The intention is that the batch file itself never needs to change when
   # switching Python versions.
 
+  print("ROOT_DIR:", ROOT_DIR)
+
+  print("template.PYTHON3_BIN_RELDIR:", template.PYTHON3_BIN_RELDIR)
+  print("os.path.join(ROOT_DIR, 'python_bin_reldir.txt'):", os.path.join(ROOT_DIR, 'python_bin_reldir.txt'))
   maybe_update(
       template.PYTHON_BIN_RELDIR,
       os.path.join(ROOT_DIR, 'python_bin_reldir.txt'))
 
+  print("template.PYTHON3_BIN_RELDIR:", template.PYTHON3_BIN_RELDIR)
+  print("os.path.join(ROOT_DIR, 'python3_bin_reldir.txt'):", os.path.join(ROOT_DIR, 'python3_bin_reldir.txt'))
   maybe_update(
       template.PYTHON3_BIN_RELDIR,
       os.path.join(ROOT_DIR, 'python3_bin_reldir.txt'))
