@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -vx
+
 DEPOT_TOOLS=$(dirname "$0")/..
 
 if [ "$OSTYPE" = "msys" ]

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -vx
+
 function bootstrap_python3 {
   base_dir=$(dirname "${BASH_SOURCE[0]}")
 
