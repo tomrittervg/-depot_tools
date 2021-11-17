@@ -28,7 +28,7 @@ set -vx
 # section of the man page for bash.
 
 while [ -n "$1" ]; do
-  if [[ "$1" = "Cr-Commit-Position:" ]] && [[ "$2" =~ .*@\{#[0-9][0-9]*\} ]]; then
+  if [[ "$1" = "Cr-Commit-Position:" ]] && [[ "$2" =~ ".*@\{#[0-9][0-9]*\}" ]]; then
     commit_pos="$2"
     shift
   else

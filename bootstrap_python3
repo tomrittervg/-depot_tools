@@ -13,7 +13,7 @@ function bootstrap_python3 {
   fi
 
   while IFS= read -r line; do
-    if [[ $line =~ ^[^#].*cpython3/.*version:(.*)$ ]]; then
+    if [[ $line =~ "^[^#].*cpython3/.*version:(.*)$" ]]; then
       PYTHON3_VERSION=${BASH_REMATCH[1]}
       PYTHON3_VERSION=${PYTHON3_VERSION//[[:space:]]/}
     fi
