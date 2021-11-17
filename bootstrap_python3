@@ -12,20 +12,16 @@ function bootstrap_python3 {
     CIPD_MANIFEST="bootstrap/manifest.txt"
   fi
 
-  echo "Platform: ${platform}"
-  PYTHON3_VERSION="infra/3pp/tools/cpython3/windows-amd64version:2@3.8.10.chromium.20"
-  #while IFS= read -r line; do
-  #  if [[ $line =~ ^[^#].*cpython3/.*version:(.*)$ ]]; then
-  #    PYTHON3_VERSION=${BASH_REMATCH[1]}
-  #    PYTHON3_VERSION=${PYTHON3_VERSION//[[:space:]]/}
-  #    echo $PYTHON3_VERSION
-  #  fi
-  #done < $CIPD_MANIFEST
+  while IFS= read -r line; do
+    if [[ $line =~ ^[^#].*cpython3/.*version:(.*)$ ]]; then
+      PYTHON3_VERSION=${BASH_REMATCH[1]}
+      PYTHON3_VERSION=${PYTHON3_VERSION//[[:space:]]/}
+    fi
+  done < $CIPD_MANIFEST
   if [ "X$PYTHON3_VERSION" == "X" ]; then
     echo Could not extract Python 3 version from manifest.
     return 1
   fi
-  echo "PYTHON3_VERSION: $PYTHON3_VERSION"
 
   BOOTSTRAP_PATH="bootstrap-${PYTHON3_VERSION}_bin"
 
@@ -34,8 +30,7 @@ function bootstrap_python3 {
       -root "$BOOTSTRAP_PATH"
 
   BOOTSTRAP_PYTHON_BIN="${BOOTSTRAP_PATH}/python3/bin/python3"
-  echo $"BOOTSTRAP_PATH"
-  #"$BOOTSTRAP_PYTHON_BIN" "bootstrap/bootstrap.py" --bootstrap-name "$BOOTSTRAP_PATH"
+  "$BOOTSTRAP_PYTHON_BIN" "bootstrap/bootstrap.py" --bootstrap-name "$BOOTSTRAP_PATH"
 
   cd - > /dev/null
 }
