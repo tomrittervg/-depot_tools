@@ -5,5 +5,5 @@
 
 :: See revert instructions in cipd_manifest.txt
 
-call "%~dp0\cipd_bin_setup.bat" > nul 2>&1
-"%~dp0\.cipd_bin\vpython.exe" -vpython-interpreter "%~dp0\python.bat" %*
+call "%~dp0\cipd_bin_setup.bat"
+"%~dp0\.cipd_bin\vpython.exe" -vpython-log-level debug -vpython-interpreter "%~dp0\python.bat" %*
