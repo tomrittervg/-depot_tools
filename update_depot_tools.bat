@@ -43,10 +43,10 @@ set errorlevel=
 cd /d "%DEPOT_TOOLS_DIR%."
 call git config remote.origin.fetch > NUL
 for /F %%x in ('git config --get remote.origin.url') DO (
-  IF not "%%x" == "%GIT_URL%" (
-    echo Your depot_tools checkout is configured to fetch from an obsolete URL
-    call git config remote.origin.url "%GIT_URL%"
-  )
+  :: IF not "%%x" == "%GIT_URL%" (
+  ::  echo Your depot_tools checkout is configured to fetch from an obsolete URL
+  ::  call git config remote.origin.url "%GIT_URL%"
+  :: )
 )
 :: depot_tools.zip archives generated before 2021-03-12 have instruction to
 :: fetch  only from old default git branch. Such branch won't be available
