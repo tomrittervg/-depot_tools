@@ -54,20 +54,14 @@ for /F %%x in ('git config --get remote.origin.url') DO (
 
 dir
 
-git config --unset-all remote.origin.fetch
-git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
-git fetch -q origin > NUL
-git checkout -q origin/main > NUL
-
-
-call git config --unset-all remote.origin.fetch
-call git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
-call git fetch -q origin > NUL
-call git checkout -q origin/main > NUL
-if errorlevel 1 (
-  echo Failed to update depot_tools.
-  goto :EOF
-)
+::call git config --unset-all remote.origin.fetch
+::call git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+::call git fetch -q origin > NUL
+::call git checkout -q origin/main > NUL
+::if errorlevel 1 (
+::  echo Failed to update depot_tools.
+::  goto :EOF
+::)
 
 :: Sync CIPD and CIPD client tools.
 call "%~dp0\cipd_bin_setup.bat"
