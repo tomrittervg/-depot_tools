@@ -36,6 +36,8 @@ if errorlevel 1 (
   goto :EOF
 )
 
+goto :DO_STUFF
+
 :GIT_UPDATE
 :: Now clear errorlevel so it can be set by other programs later.
 set errorlevel=
@@ -62,6 +64,8 @@ if errorlevel 1 (
   echo Failed to update depot_tools.
   goto :EOF
 )
+
+:DO_STUFF
 
 :: Sync CIPD and CIPD client tools.
 call "%~dp0\cipd_bin_setup.bat"
